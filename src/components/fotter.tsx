@@ -1,4 +1,4 @@
-import { FaFilePdf, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -9,32 +9,38 @@ const Footer = () => {
           <p className="text-sm text-gray-300">Full Stack Developer</p>
         </div>
 
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <a
-            href="https://github.com/005abhi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white"
-          >
-            <FaGithub className="text-xl" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/abhinandan-p-2a217b286/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white"
-          >
-            <FaLinkedin className="text-xl" />
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1-DhCGtIllF_nprZUHqOLgieCQGp8CHqH/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white"
-          >
-            <FaFilePdf className="text-xl" />
-          </a>
+        <div className="flex flex-col items-center md:items-middel">
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="https://github.com/005abhi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white"
+            >
+              <FaGithub className="text-xl" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abhinandan-p-2a217b286/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white"
+            >
+              <FaLinkedin className="text-xl" />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1-DhCGtIllF_nprZUHqOLgieCQGp8CHqH/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white"
+            >
+              <FaFilePdf className="text-xl" />
+            </a>
+          </div>
+          <div className="mt-2 text-sm">
+            abhinandanp1003@gmail.com | +91-6363298202
+          </div>
         </div>
+
         <p className="text-xs text-gray-100 mt-4 md:mt-0">
           &copy; {new Date().getFullYear()} Abhi. All Rights Reserved.
         </p>
@@ -42,4 +48,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
