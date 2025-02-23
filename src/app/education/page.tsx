@@ -10,9 +10,10 @@ const EducationTimeline: React.FC = () => {
       id="education"
       className="bg-gray-300 min-h-screen flex flex-col items-center py-12 px-4"
     >
-      <h2 className="text-4xl font-bold text-gray-900 mb-12">
+      <h1 className="text-4xl font-bold text-gray-900 z-10">
         Education & Certification
-      </h2>
+      </h1>
+      <br></br> <br></br>
       <div className="max-w-2xl w-full relative">
         <div className="absolute left-4 top-0 w-1 bg-gray-400 h-full"></div>
         <div className="relative space-y-8">
