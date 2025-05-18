@@ -31,6 +31,14 @@ const projects = [
     image: "/images/c.jpeg",
     link: "https://github.com/005abhi/Coalesce",
   },
+  {
+    id: 4,
+    title: "BLOGIFY",
+    description:
+      "Blogify is a full-stack blogging platform with user authentication, rich-text editing, blog categorization, and a CI/CD pipeline for seamless deployment.",
+    image: "/images/b.png",
+    link: "https://github.com/005abhi/BLOGIFY",
+  },
 ];
 
 const ProjectCard = () => {
@@ -49,12 +57,14 @@ const ProjectCard = () => {
   return (
     <section
       id="projects"
-      className="relative flex flex-col items-center justify-center min-h-screen bg-gray-300 p-10 overflow-hidden"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-gray-300 px-4 py-10"
     >
-      <h1 className="text-4xl font-bold text-gray-900 z-10">PROJECT</h1>
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+        PROJECT
+      </h1>
 
-      {/* Laptop & Project Cards */}
-      <div className="relative z-10 w-[900px] max-w-full mt-0">
+      {/* For desktop/laptop view */}
+      <div className="hidden sm:block relative w-[900px] max-w-full">
         <Image
           src="/images/lppp.png"
           alt="Laptop"
@@ -63,8 +73,7 @@ const ProjectCard = () => {
           className="w-full h-auto"
         />
 
-        {/* Screen Content - Project Details */}
-        <div className="absolute top-[11.6%] left-[11.7%] w-[76.5%] h-[77.5%] bg-white shadow-md overflow-hidden rounded-lg flex flex-col sm:flex-row items-center justify-center p-4 sm:p-6">
+        <div className="absolute top-[11.6%] left-[11.7%] w-[76.5%] h-[77.5%] bg-white shadow-md overflow-hidden rounded-lg flex flex-col sm:flex-row items-center justify-center p-6">
           <AnimatePresence mode="wait">
             <motion.div
               key={projects[currentIndex].id}
@@ -74,18 +83,16 @@ const ProjectCard = () => {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Left - Image */}
               <div className="relative w-full sm:w-1/2 flex justify-center">
                 <Image
                   src={projects[currentIndex].image}
                   alt={projects[currentIndex].title}
                   width={600}
-                  height={200}
-                  className="rounded-xl w-full max-w-[300px] sm:max-w-[500px] shadow-lg"
+                  height={300}
+                  className="rounded-xl w-full max-w-[500px] object-contain shadow-lg"
                 />
               </div>
 
-              {/* Right - Project Info */}
               <div className="w-full sm:w-1/2 pl-0 sm:pl-6 mt-4 sm:mt-0 text-center sm:text-left">
                 <motion.h2
                   className="text-xl sm:text-2xl font-bold text-green-700"
@@ -107,14 +114,14 @@ const ProjectCard = () => {
                 </motion.p>
                 <Link
                   href={projects[currentIndex].link}
-                  className="mt-3 inline-block px-4 sm:px-6 py-2 sm:py-3 bg-green-800 text-white text-sm sm:text-lg font-semibold rounded-lg hover:bg-green-600 transition"
+                  className="mt-3 inline-block px-4 py-2 bg-green-800 text-white text-sm font-semibold rounded-lg hover:bg-green-600 transition"
                 >
                   Visit Now
                 </Link>
-                <div className="mt-4 flex justify-center sm:justify-start gap-3 sm:gap-4">
+                <div className="mt-4 flex justify-center sm:justify-start gap-3">
                   <motion.button
                     onClick={handlePrev}
-                    className="p-2 sm:p-3 bg-green-700 rounded-full text-white hover:bg-green-600 text-lg sm:text-xl"
+                    className="p-2 bg-green-700 rounded-full text-white hover:bg-green-600"
                     whileHover={{
                       rotate: [0, -10, 10, -10, 10, 0],
                       transition: { duration: 0.4 },
@@ -124,7 +131,7 @@ const ProjectCard = () => {
                   </motion.button>
                   <motion.button
                     onClick={handleNext}
-                    className="p-2 sm:p-3 bg-green-700 rounded-full text-white hover:bg-green-600 text-lg sm:text-xl"
+                    className="p-2 bg-green-700 rounded-full text-white hover:bg-green-600"
                     whileHover={{
                       rotate: [0, 10, -10, 10, -10, 0],
                       transition: { duration: 0.4 },
@@ -137,6 +144,54 @@ const ProjectCard = () => {
             </motion.div>
           </AnimatePresence>
         </div>
+      </div>
+
+      {/* Mobile View */}
+      <div className="sm:hidden w-full bg-white rounded-lg p-4 shadow-md">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={projects[currentIndex].id}
+            className="flex flex-col items-center text-center"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Image
+              src={projects[currentIndex].image}
+              alt={projects[currentIndex].title}
+              width={300}
+              height={200}
+              className="rounded-xl w-full max-w-xs mb-4 object-contain"
+            />
+            <h2 className="text-xl font-bold text-green-700">
+              {projects[currentIndex].title}
+            </h2>
+            <p className="text-sm text-gray-800 mt-2">
+              {projects[currentIndex].description}
+            </p>
+            <Link
+              href={projects[currentIndex].link}
+              className="mt-3 inline-block px-4 py-2 bg-green-800 text-white text-sm font-semibold rounded-lg hover:bg-green-600 transition"
+            >
+              Visit Now
+            </Link>
+            <div className="mt-4 flex justify-center gap-3">
+              <motion.button
+                onClick={handlePrev}
+                className="p-2 bg-green-700 rounded-full text-white hover:bg-green-600"
+              >
+                <ArrowLeft size={16} />
+              </motion.button>
+              <motion.button
+                onClick={handleNext}
+                className="p-2 bg-green-700 rounded-full text-white hover:bg-green-600"
+              >
+                <ArrowRight size={16} />
+              </motion.button>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

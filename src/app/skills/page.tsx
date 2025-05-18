@@ -5,6 +5,7 @@ const skills = [
   { name: "CSS", logo: "/icons/css.png" },
   { name: "JAVA SCRIPT", logo: "/icons/js.png" },
   { name: "NODE JS", logo: "/icons/nodejs.png" },
+  { name: "EXPRESS JS", logo: "/icons/E.png" },
   { name: "REACT JS", logo: "/icons/reactjs.png" },
   { name: "VUE", logo: "/icons/vue.png" },
   { name: "NEXT JS", logo: "/icons/nextjs.png" },
