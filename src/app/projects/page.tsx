@@ -9,6 +9,14 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const projects = [
   {
     id: 1,
+    title: "BLOGIFY",
+    description:
+      "Blogify is a full-stack blogging platform with user authentication, rich-text editing, blog categorization, and a CI/CD pipeline for seamless deployment.",
+    image: "/images/b.png",
+    link: "https://github.com/005abhi/BLOGIFY",
+  },
+  {
+    id: 2,
     title: "ElevateIQ",
     description:
       "ElevateIQ is a platform addressing India's academia-industry skills gap, built with Next.js, MongoDB, and AI APIs.",
@@ -16,7 +24,7 @@ const projects = [
     link: "https://github.com/005abhi/Elevate-iq",
   },
   {
-    id: 2,
+    id: 3,
     title: "Jarvis AI Chatbot",
     description:
       "Jarvis is a voice-enabled AI chatbot built with React and Node.js, integrating the Gemini API for real-time interactions.",
@@ -24,20 +32,12 @@ const projects = [
     link: "https://github.com/005abhi/JARVIS-AI-CHATBOT",
   },
   {
-    id: 3,
+    id: 4,
     title: "Coalesce",
     description:
       "Coalesce is a platform bridging academia and industry in India through skill assessments, insights, and professional development.",
     image: "/images/c.jpeg",
     link: "https://github.com/005abhi/Coalesce",
-  },
-  {
-    id: 4,
-    title: "BLOGIFY",
-    description:
-      "Blogify is a full-stack blogging platform with user authentication, rich-text editing, blog categorization, and a CI/CD pipeline for seamless deployment.",
-    image: "/images/b.png",
-    link: "https://github.com/005abhi/BLOGIFY",
   },
 ];
 
