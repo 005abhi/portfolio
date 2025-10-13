@@ -40,6 +40,22 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+@layer base {
+  * {
+    cursor: none !important;
+    border-color: hsl(var(--border));
+  }
+}
+@layer base {
+  input[type="month"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  input[type="month"] {
+    color-scheme: dark; /* ensures white calendar/dropdown in Firefox */
+  }
+}
 
 /* Optional: Ensure scrolling still works */
 html,

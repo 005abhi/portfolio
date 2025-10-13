@@ -11,6 +11,7 @@ const Hero = () => {
   const [loadingText, setLoadingText] = useState("");
   const marqueeX = useMotionValue(0);
   const marqueeRef = useRef<HTMLDivElement>(null);
+  const [showMenu, setShowMenu] = useState(false);
 
   // Track scroll direction
   useEffect(() => {
@@ -93,30 +94,85 @@ const Hero = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className="absolute top-5 right-5 sm:top-10 sm:right-10 flex space-x-5 sm:space-x-8 text-sm sm:text-lg font-medium">
-        <a
-          href="#projects"
-          onClick={(e) => handleScrollToSection(e, "projects", " Projects...")}
-          className="hover:opacity-75 transition"
-        >
-          PROJECTS
-        </a>
-        <a
-          href="#education"
-          onClick={(e) =>
-            handleScrollToSection(e, "education", " Education...")
-          }
-          className="hover:opacity-75 transition"
-        >
-          EDUCATION
-        </a>
-        <a
-          href="#skills"
-          onClick={(e) => handleScrollToSection(e, "skills", " Skills...")}
-          className="hover:opacity-75 transition"
-        >
-          SKILLS
-        </a>
+      {/* Navigation Links */}
+      <div className="absolute top-5 right-5 sm:top-10 sm:right-10 flex items-center space-x-5 sm:space-x-8 text-sm sm:text-lg font-medium">
+        {/* Desktop Links */}
+        <div className="hidden sm:flex space-x-5 sm:space-x-8">
+          <a
+            href="#about"
+            onClick={(e) => handleScrollToSection(e, "about", " About...")}
+            className="hover:opacity-75 transition"
+          >
+            ABOUT
+          </a>
+          <a
+            href="#projects"
+            onClick={(e) =>
+              handleScrollToSection(e, "projects", " Projects...")
+            }
+            className="hover:opacity-75 transition"
+          >
+            PROJECTS
+          </a>
+          <a
+            href="#experience"
+            onClick={(e) =>
+              handleScrollToSection(e, "experience", " Experience...")
+            }
+            className="hover:opacity-75 transition"
+          >
+            EXPERIENCE
+          </a>
+          <a
+            href="#education"
+            onClick={(e) =>
+              handleScrollToSection(e, "education", " Education...")
+            }
+            className="hover:opacity-75 transition"
+          >
+            EDUCATION
+          </a>
+          <a
+            href="#skills"
+            onClick={(e) => handleScrollToSection(e, "skills", " Skills...")}
+            className="hover:opacity-75 transition"
+          >
+            SKILLS
+          </a>
+        </div>
+
+        {/* Mobile 3-dot Menu */}
+        <div className="sm:hidden relative">
+          <button
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="text-2xl focus:outline-none"
+          >
+            ⋮
+          </button>
+
+          {showMenu && (
+            <div className="absolute right-0 mt-2 w-40 bg-gray-800 rounded-lg shadow-lg flex flex-col text-sm">
+              {[
+                { id: "about", text: "About" },
+                { id: "projects", text: "Projects" },
+                { id: "experience", text: "Experience" },
+                { id: "education", text: "Education" },
+                { id: "skills", text: "Skills" },
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) =>
+                    handleScrollToSection(e, item.id, ` ${item.text}...`)
+                  }
+                  className="px-4 py-2 hover:bg-gray-700 transition"
+                >
+                  {item.text}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Loader Overlay */}

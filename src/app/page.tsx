@@ -9,6 +9,9 @@ import Preloader from "@/components/Preloader";
 import "../styles/globals.css";
 import { motion } from "framer-motion";
 import Lenis from "lenis"; // Fix: Proper import
+import ExperienceSection from "./experience/page";
+import AboutMeSection from "./aboout_me/page";
+import CustomCursor from "@/components/ui/custom-cursor";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -34,8 +37,12 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeInOut" }} // Smooth fade-in of content
         >
+          {" "}
+          <CustomCursor />
           <Hero />
+          <AboutMeSection />
           <Projects />
+          <ExperienceSection />
           <EducationTimeline />
           <Skills />
           <Footer />
