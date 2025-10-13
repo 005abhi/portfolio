@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import Projects from "./projects/page";
 import EducationTimeline from "./education/page";
-import Skills from "./skills/page";
+
 import Footer from "@/components/fotter";
 import Preloader from "@/components/Preloader";
 import "../styles/globals.css";
@@ -12,6 +12,7 @@ import Lenis from "lenis"; // Fix: Proper import
 import ExperienceSection from "./experience/page";
 import AboutMeSection from "./aboout_me/page";
 import CustomCursor from "@/components/ui/custom-cursor";
+import Skills from "../components/Skills";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
