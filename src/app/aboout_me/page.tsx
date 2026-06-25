@@ -10,32 +10,33 @@ const AboutMeSection: React.FC = () => {
       icon: <FaCode className="text-3xl" />,
       title: "Full Stack Development",
       description:
-        "Crafting with Next.js, React, and Node.js to build seamless digital experiences",
+        "Building end-to-end products with Next.js, React, Node.js, TypeScript, and PostgreSQL — from UI to deployment.",
     },
     {
       icon: <FaRocket className="text-3xl" />,
-      title: "Performance & Purpose",
+      title: "DevOps & Cloud",
       description:
-        "Balancing beautiful design with fast, functional, and purposeful solutions",
+        "CI/CD pipelines with GitHub Actions, AWS EC2 deployments, Docker containerization, and scalable cloud infrastructure.",
     },
     {
       icon: <FaBrain className="text-3xl" />,
-      title: "AI-Driven Innovation",
+      title: "AI-Driven Workflows",
       description:
-        "Exploring how AI and automation can shape smarter, scalable solutions",
+        "Building agentic LLM workflows using LangGraph, integrating Gemini AI, and automating intelligent operations at scale.",
     },
     {
       icon: <FaLaptopCode className="text-3xl" />,
-      title: "Clean Code Philosophy",
+      title: "Backend & Databases",
       description:
-        "Making technology feel effortless through clean, maintainable code",
+        "Designing APIs with Express.js, FastAPI, and Flask, backed by PostgreSQL, MongoDB, MySQL, and Elasticsearch.",
     },
   ];
 
   return (
     <div
       id="about"
-      className="min-h-screen bg-gray-300 py-10 sm:py-20 px-4 flex items-center relative overflow-hidden"
+      className="min-h-screen py-10 sm:py-20 px-4 flex items-center relative overflow-hidden"
+      style={{ background: "var(--bg-base)" }}
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -46,7 +47,8 @@ const AboutMeSection: React.FC = () => {
             opacity: [0.03, 0.05, 0.03],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-600 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl"
+          style={{ background: "var(--ink-accent)" }}
         ></motion.div>
         <motion.div
           animate={{
@@ -74,14 +76,14 @@ const AboutMeSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="inline-block mb-4">
-                <h2 className="text-6xl font-bold mb-2 tracking-wide bg-gradient-to-r from-green-600 via-green-700 to-green-800 bg-clip-text text-transparent relative">
+                <h2 className="text-6xl font-bold mb-2 tracking-wide relative" style={{ color: "var(--ink-accent)" }}>
                   <span className="text-3xl">━━</span> ABOUT ME{" "}
                   <span className="text-3xl">━━</span>
                 </h2>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Turning Ideas Into{" "}
-                <span className="text-green-600">Digital Reality</span>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6" style={{ color: "var(--ink-primary)" }}>
+                Building Things That{" "}
+                <span style={{ color: "var(--ink-accent-mid)" }}>Actually Work</span>
               </h1>
             </motion.div>
 
@@ -89,54 +91,37 @@ const AboutMeSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl text-gray-800 leading-relaxed"
+              className="text-xl leading-relaxed" style={{ color: "var(--ink-primary)" }}
             >
-              I turn ideas into{" "}
-              <span className="text-green-700 font-semibold">fast</span>,{" "}
-              <span className="text-green-600 font-semibold">functional</span>,
-              and{" "}
-              <span className="text-green-800 font-semibold">beautiful</span>{" "}
-              web experiences.
+              CS graduate from{" "}
+              <span className="font-semibold" style={{ color: "var(--ink-accent-mid)" }}>Dr. Ambedkar Institute of Technology</span>{" "}
+              with over a year of professional experience in software engineering and DevOps.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg text-gray-700 leading-relaxed"
+              className="text-lg leading-relaxed" style={{ color: "var(--ink-secondary)" }}
             >
-              A Full Stack Developer who loves crafting with{" "}
-              <span className="text-gray-900 font-semibold">Next.js</span>,{" "}
-              <span className="text-gray-900 font-semibold">React</span>, and{" "}
-              <span className="text-gray-900 font-semibold">Node.js</span>, I
-              build digital products that balance design, performance, and
-              purpose.
+              Currently working as a{" "}
+              <span className="font-semibold" style={{ color: "var(--ink-primary)" }}>Software Engineer at Velesium Labs</span>,
+              building agentic LLM workflows with LangGraph, optimizing Elasticsearch pipelines,
+              and developing multi-tenant full-stack platforms with Next.js, TypeScript, and PostgreSQL.
             </motion.p>
 
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="pt-4"
+              className="text-lg leading-relaxed" style={{ color: "var(--ink-secondary)" }}
             >
-              <p className="text-lg text-gray-700 leading-relaxed mb-2">
-                Currently creating at{" "}
-                <span className="text-green-700 font-semibold">
-                  Velesium Labs
-                </span>
-                , exploring how AI and clean code can shape smarter, scalable
-                solutions.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                I'm deeply curious about{" "}
-                <span className="text-green-600 font-semibold">
-                  AI-driven development
-                </span>
-                ,{" "}
-                <span className="text-green-700 font-semibold">automation</span>
-                , and how clean code can make technology feel effortless.
-              </p>
-            </motion.div>
+              Previously interned at{" "}
+              <span className="font-semibold" style={{ color: "var(--ink-accent-mid)" }}>Rooman Technologies</span>{" "}
+              as a DevOps Engineer — designing CI/CD pipelines with GitHub Actions and deploying on{" "}
+              <span className="font-semibold" style={{ color: "var(--ink-primary)" }}>AWS EC2</span>.
+              Passionate about cloud technologies and pursuing expertise in scalable cloud solutions.
+            </motion.p>
           </motion.div>
 
           {/* Right Side - Highlight Cards */}
@@ -153,23 +138,63 @@ const AboutMeSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.03 }}
-                className="bg-white rounded-2xl p-6 border-2 border-gray-400 hover:border-green-600 transition-all duration-300 group shadow-lg"
+                className="rounded-2xl p-6 border border-gray-300 hover:border-[oklch(44%_0.13_150)] transition-all duration-300 group shadow-sm hover:shadow-md"
+                style={{ background: "var(--bg-surface)" }}
               >
-                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-green-700 group-hover:text-green-600 transition-colors">
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: "oklch(90% 0.04 255)" }}>
+                  <div style={{ color: "var(--ink-accent)" }}>
                     {item.icon}
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "var(--ink-primary)" }}>
                   {item.title}
                 </h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "var(--ink-secondary)" }}>
                   {item.description}
                 </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* Skills */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="mt-14"
+        >
+          <div className="flex items-center gap-3 mb-5">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "var(--ink-muted)" }}>Tech Stack</span>
+            <div className="flex-1 h-px bg-gray-200" />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { name: "Python",        logo: "/icons/python.png"   },
+              { name: "React.js",      logo: "/icons/reactjs.png"  },
+              { name: "Next.js",       logo: "/icons/nextjs.png"   },
+              { name: "Tailwind CSS",  logo: "/icons/t.png"        },
+              { name: "Node.js",       logo: "/icons/nodejs.png"   },
+              { name: "Express.js",    logo: "/icons/E.png"        },
+              { name: "FastAPI",       logo: "/icons/fastapi.png"  },
+              { name: "PostgreSQL",    logo: "/icons/pq.png"       },
+              { name: "MongoDB",       logo: "/icons/mongodb.png"  },
+              { name: "MySQL",         logo: "/icons/sql.png"      },
+              { name: "Elasticsearch", logo: "/icons/elastic.png"  },
+              { name: "AWS",           logo: "/icons/aws.png"      },
+              { name: "Docker",        logo: "/icons/docker.png"   },
+            ].map((s) => (
+              <div
+                key={s.name}
+                className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border bg-white text-base font-medium"
+                style={{ borderColor: "rgba(0,0,0,0.1)", color: "var(--ink-primary)" }}
+              >
+                {s.logo && <img src={s.logo} alt={s.name} className="w-5 h-5 object-contain" />}
+                {s.name}
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Bottom Stats or Additional Info */}
         <motion.div
@@ -179,20 +204,21 @@ const AboutMeSection: React.FC = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { label: "Projects Completed", value: "10+" },
-            { label: "Technologies", value: "15+" },
-            { label: "Internships", value: "4" },
-            { label: "Certifications", value: "5+" },
+            { label: "Projects Built", value: "3+" },
+            { label: "Technologies", value: "20+" },
+            { label: "Work Experience", value: "1yr" },
+            { label: "Certifications", value: "6+" },
           ].map((stat, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="text-center p-4 bg-white rounded-xl border-2 border-gray-400 shadow-md"
+              className="text-center p-4 rounded-xl border border-gray-300 shadow-sm"
+              style={{ background: "var(--bg-surface)" }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-green-700 mb-2">
+              <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--ink-accent)" }}>
                 {stat.value}
               </div>
-              <div className="text-gray-700 text-sm">{stat.label}</div>
+              <div className="text-sm" style={{ color: "var(--ink-secondary)" }}>{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

@@ -3,27 +3,50 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #ffffff;
-}
+  /* Photo-derived palette */
+  /* Warm stone — pulled from the concrete/pavement in the photo */
+  --bg-base:        oklch(92% 0.012 85);
+  /* Slightly cooler surface for cards */
+  --bg-surface:     oklch(97% 0.008 85);
+  /* Navy-indigo — pulled directly from Abhinandan's shirt in the photo */
+  --ink-accent:     oklch(32% 0.09 255);
+  --ink-accent-mid: oklch(38% 0.10 255);
+  --ink-accent-lit: oklch(48% 0.10 255);
+  /* Amber-gold — the warm sky light in the photo */
+  --ink-gold:       oklch(78% 0.18 65);
+  --ink-gold-deep:  oklch(68% 0.18 65);
+  /* Dark navy footer — same hue family as the shirt, deeper */
+  --bg-dark:        oklch(22% 0.07 255);
+  --bg-darker:      oklch(15% 0.05 255);
+  /* Text */
+  --ink-primary:    oklch(18% 0.01 240);
+  --ink-secondary:  oklch(38% 0.01 240);
+  --ink-muted:      oklch(52% 0.01 240);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fffbfb;
-    --foreground: #ededed;
-  }
+  --background: oklch(92% 0.012 85);
+  --foreground: oklch(18% 0.01 240);
 }
 html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: var(--font-josefin-sans), sans-serif;
-}
-
-body {
+  font-family: var(--font-outfit), var(--font-josefin-sans), sans-serif;
   color: var(--foreground);
   background: var(--background);
 }
+@keyframes glitch {
+  0%   { text-shadow: -3px 0 red, 3px 0 cyan; clip-path: inset(10% 0 80% 0); }
+  20%  { text-shadow: 3px 0 red, -3px 0 cyan; clip-path: inset(60% 0 20% 0); }
+  40%  { text-shadow: -2px 0 red, 2px 0 cyan; clip-path: inset(30% 0 50% 0); }
+  60%  { text-shadow: 2px 0 red, -2px 0 cyan; clip-path: none; }
+  80%  { text-shadow: none; }
+  100% { text-shadow: none; clip-path: none; }
+}
+
+.glitch {
+  animation: glitch 0.08s steps(1) forwards;
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -36,8 +59,33 @@ body {
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
 }
+
 /* Hide scrollbar but allow scrolling */
 ::-webkit-scrollbar {
+  display: none;
+}
+@layer base {
+  * {
+    cursor: none !important;
+    border-color: hsl(var(--border));
+  }
+}
+@layer base {
+  input[type="month"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  input[type="month"] {
+    color-scheme: dark; /* ensures white calendar/dropdown in Firefox */
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 @layer base {

@@ -7,24 +7,24 @@ import { FaBriefcase, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 const ExperienceSection: React.FC = () => {
   const experiences = [
     {
-      title: "Web Developer",
+      title: "Software Engineer 1",
       company: "Velesium Labs",
-      type: "Internship",
-      duration: "Jul 2025 - Present · 4 mos",
-      location: "Remote",
+      type: "Full-time",
+      duration: "Jul 2025 - Present",
+      location: "Bengaluru, India",
       description:
-        "Contributed to 4+ projects, including the company's flagship public-facing website, focusing on creating responsive, scalable, and maintainable solutions using Next.js, React.js, and Node.js. Collaborated closely with designers and developers to implement new features, optimize performance across devices and browsers, and streamline the development workflow.",
-      skills: ["Front-End Development", "React.js", "Next.js", "Node.js"],
+        "Developing agentic LLM workflows using LangGraph for incident analysis and operational automation on real-time enterprise data. Optimizing Elasticsearch data pipelines, migrating AI workflows to newer LLM models, and improving ES|QL queries for operational insights. Also led end-to-end development of a multi-tenant ticket management system using Next.js, TypeScript, PostgreSQL (Neon), and JWT-based authentication, with WhatsApp integration and AI-powered n8n workflows.",
+      skills: ["LangGraph", "LLM", "Elasticsearch", "Next.js", "TypeScript", "PostgreSQL", "n8n", "GitHub Actions"],
       current: true,
     },
     {
       title: "DevOps Engineer",
       company: "Rooman Technologies",
       type: "Internship",
-      duration: "Feb 2025 - May 2025 · 4 mos",
-      location: "Remote",
+      duration: "Feb 2025 - Jun 2025",
+      location: "Bengaluru, India",
       description:
-        "Developed and deployed a full-stack blogging platform using the MERN stack, integrating CI/CD pipelines with GitHub Actions and deploying to AWS EC2, improving deployment efficiency by 60%. Gained hands-on experience in core DevOps practices including CI/CD, containerization with Docker, version control using Git & GitHub, and cloud deployment on AWS.",
+        "Contributed to a full-stack blogging application as part of a DevOps-focused project. Designed and implemented a CI/CD pipeline using GitHub Actions to automate build and deployment workflows, enabling faster and more reliable releases. Deployed and managed the application on AWS EC2, configuring the server environment for smooth hosting. Worked with Git and GitHub for version control and collaborative development.",
       skills: [
         "DevOps",
         "CI/CD",
@@ -32,6 +32,7 @@ const ExperienceSection: React.FC = () => {
         "AWS EC2",
         "GitHub Actions",
         "MERN Stack",
+        "Git",
       ],
       current: false,
     },
@@ -72,7 +73,7 @@ const ExperienceSection: React.FC = () => {
   ];
 
   return (
-    <div id="experience" className="min-h-screen bg-gray-300 py-16 px-4">
+    <div id="experience" className="min-h-screen py-16 px-4" style={{ background: "var(--bg-base)" }}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -81,18 +82,16 @@ const ExperienceSection: React.FC = () => {
           className="text-center mb-8"
         >
           <div className="inline-block relative">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
-              <span className="bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
-                ▶ EXPERIENCE ◀
-              </span>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-2" style={{ color: "var(--ink-accent)" }}>
+              ▶ EXPERIENCE ◀
             </h1>
-            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-green-600 to-transparent rounded-full" />
+            <div className="absolute -bottom-2 left-0 right-0 h-1 rounded-full" style={{ background: "var(--ink-accent-mid)" }} />
           </div>
         </motion.div>
 
         <div className="relative">
           {/* Vertical Timeline Line */}
-          <div className="hidden md:block absolute left-8 top-0 w-0.5 h-full bg-gradient-to-b from-green-700 via-gray-600 to-gray-800"></div>
+          <div className="hidden md:block absolute left-8 top-0 w-0.5 h-full" style={{ background: "var(--ink-accent)" }}></div>
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
@@ -105,49 +104,50 @@ const ExperienceSection: React.FC = () => {
                 className="relative"
               >
                 {/* Timeline Dot */}
-                <div className="hidden md:flex absolute left-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-green-700 shadow-lg z-10 mt-6"></div>
+                <div className="hidden md:flex absolute left-8 transform -translate-x-1/2 w-4 h-4 rounded-full shadow-lg z-10 mt-6" style={{ background: "var(--ink-accent-mid)" }}></div>
 
                 {/* Experience Card */}
                 <motion.div
                   whileHover={{ y: -5, scale: 1.01 }}
                   transition={{ duration: 0.3 }}
-                  className="md:ml-20 bg-white rounded-2xl p-6 border-2 border-gray-400 shadow-xl hover:shadow-2xl hover:border-green-600 transition-all duration-300"
+                  className="md:ml-20 rounded-2xl p-6 border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300"
+                  style={{ background: "var(--bg-surface)" }}
                 >
                   {/* Header */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <h3 className="text-2xl font-bold text-gray-900">
+                        <h3 className="text-2xl font-bold" style={{ color: "var(--ink-primary)" }}>
                           {exp.title}
                         </h3>
                         {exp.current && (
-                          <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full border-2 border-green-700">
+                          <span className="px-3 py-1 text-xs font-semibold rounded-full border" style={{ background: "oklch(90% 0.04 255)", color: "var(--ink-accent)", borderColor: "var(--ink-accent-mid)" }}>
                             Current
                           </span>
                         )}
                       </div>
-                      <p className="text-lg text-green-700 font-semibold mb-1">
+                      <p className="text-lg font-semibold mb-1" style={{ color: "var(--ink-accent-mid)" }}>
                         {exp.company} · {exp.type}
                       </p>
-                      <div className="flex flex-col md:flex-row md:items-center gap-2 text-gray-700 text-sm">
+                      <div className="flex flex-col md:flex-row md:items-center gap-2 text-sm" style={{ color: "var(--ink-secondary)" }}>
                         <div className="flex items-center gap-1">
-                          <FaCalendarAlt className="text-green-700" />
-                          <span>{exp.duration}</span>
+                          <FaCalendarAlt className="text-orange-400" />
+                          <span className="text-orange-400 font-medium">{exp.duration}</span>
                         </div>
                         <span className="hidden md:inline">•</span>
                         <div className="flex items-center gap-1">
-                          <FaMapMarkerAlt className="text-green-700" />
+                          <FaMapMarkerAlt style={{ color: "var(--ink-gold-deep)" }} />
                           <span>{exp.location}</span>
                         </div>
                       </div>
                     </div>
                     <div className="mt-4 md:mt-0">
-                      <FaBriefcase className="text-4xl text-gray-400" />
+                      <FaBriefcase className="text-4xl" style={{ color: "var(--ink-muted)" }} />
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-800 leading-relaxed mb-4">
+                  <p className="leading-relaxed mb-4" style={{ color: "var(--ink-secondary)" }}>
                     {exp.description}
                   </p>
 
@@ -156,7 +156,8 @@ const ExperienceSection: React.FC = () => {
                     {exp.skills.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-green-50 text-green-700 text-sm rounded-full border border-green-600 hover:bg-green-100 transition-colors duration-200"
+                        className="px-3 py-1 text-sm rounded-full border transition-colors duration-200"
+                        style={{ background: "oklch(92% 0.03 255)", color: "var(--ink-accent)", borderColor: "oklch(78% 0.06 255)" }}
                       >
                         {skill}
                       </span>

@@ -12,7 +12,6 @@ import Lenis from "lenis"; // Fix: Proper import
 import ExperienceSection from "./experience/page";
 import AboutMeSection from "./aboout_me/page";
 import CustomCursor from "@/components/ui/custom-cursor";
-import Skills from "../components/Skills";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -45,7 +44,6 @@ export default function Home() {
           <Projects />
           <ExperienceSection />
           <EducationTimeline />
-          <Skills />
           <Footer />
         </motion.div>
       )}

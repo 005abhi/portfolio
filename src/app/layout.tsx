@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Josefin_Sans } from "next/font/google";
+import { Josefin_Sans, Outfit } from "next/font/google";
 import "../styles/globals.css"; // ✅ Import Global CSS
 
 const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"], // Adjust as needed
+  weight: ["300", "400", "600", "700"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${josefinSans.variable} antialiased`}>{children}</body>
+      <body className={`${josefinSans.variable} ${outfit.variable} antialiased`}>{children}</body>
     </html>
   );
 }

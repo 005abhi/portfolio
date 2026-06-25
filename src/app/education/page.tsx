@@ -2,89 +2,128 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGraduationCap, FaCertificate } from "react-icons/fa";
+import { FaGraduationCap, FaCertificate, FaCalendarAlt } from "react-icons/fa";
+
+const educationData = [
+  {
+    title: "Bachelor's in Computer Science",
+    institution: "Dr. Ambedkar Institute of Technology",
+    date: "2021 – 2025",
+    bullets: [
+      "CGPA: 7.69",
+      "Computer Science & Engineering",
+      "4 Years",
+      "Bangalore",
+    ],
+    chips: ["B.E", "CSE", "CGPA 7.69"],
+    accent: "#3b82f6",
+  },
+  {
+    title: "Pre-University (PCMC)",
+    institution: "MES Kishora Kendra P.U. College",
+    date: "2019 – 2021",
+    bullets: ["Percentage: 73%", "Physics, Chemistry, Maths & CS", "2 Years"],
+    chips: ["PUC", "PCMC", "73%"],
+    accent: "#8b5cf6",
+  },
+  {
+    title: "SSLC",
+    institution: "MES Kishora Kendra",
+    date: "2018 – 2019",
+    bullets: ["Percentage: 76%", "Strong academic foundation"],
+    chips: ["SSLC", "76%"],
+    accent: "#06b6d4",
+  },
+];
+
+const certificationData = [
+  {
+    title: "McKinsey Forward Program",
+    institution: "McKinsey & Company",
+    date: "October 2025",
+    bullets: [
+      "Learning strategies & memory techniques",
+      "Productivity skills",
+      "Credly Digital Badge",
+    ],
+    chips: ["Leadership", "Productivity"],
+    accent: "#3b82f6",
+  },
+  {
+    title: "Master Full Stack Development",
+    institution: "Udemy",
+    date: "Sep – Oct 2025",
+    bullets: [
+      "Comprehensive web development",
+      "Frontend & Backend",
+      "Real-world projects",
+    ],
+    chips: ["React", "Node.js", "Full Stack"],
+    accent: "#a855f7",
+  },
+  {
+    title: "Node.js – Beginner to Advance",
+    institution: "Udemy",
+    date: "Aug – Sep 2025",
+    bullets: [
+      "Server-side JavaScript",
+      "Express.js & REST APIs",
+      "MongoDB integration",
+    ],
+    chips: ["Node.js", "Express", "MongoDB"],
+    accent: "#10b981",
+  },
+  {
+    title: "Certified Ethical Hacker (CEH)",
+    institution: "EC-Council",
+    date: "Apr – Jun 2024",
+    bullets: [
+      "Network security",
+      "Vulnerability assessment",
+      "Cybersecurity hands-on",
+    ],
+    chips: ["CEH", "Cybersecurity", "Networking"],
+    accent: "#ef4444",
+  },
+  {
+    title: "Hackathon – Cognavi India",
+    institution: "Indian Institute of Science",
+    date: "January 2024",
+    bullets: [
+      "Built 'Coalesce' platform",
+      "Bridging education & industry",
+      "Team collaboration",
+    ],
+    chips: ["Hackathon", "Next.js", "AI"],
+    accent: "#f59e0b",
+  },
+  {
+    title: "Java Full Stack Development",
+    institution: "Besant Technologies",
+    date: "Jun 2023 – Jan 2024",
+    bullets: [
+      "Core & Advanced Java",
+      "React.js & MySQL",
+      "HTML, CSS, JavaScript",
+    ],
+    chips: ["Java", "React.js", "MySQL"],
+    accent: "#06b6d4",
+  },
+];
 
 const EducationTimeline = () => {
   const [activeTab, setActiveTab] = useState("education");
-
-  const educationData = [
-    {
-      title: "Bachelor's Degree in Computer Science",
-      date: "2021 - 2025",
-      description:
-        "Completed studies at Dr. Ambedkar Institute of Technology with a CGPA of 7.7, gaining strong theoretical and practical skills.",
-      icon: <FaGraduationCap className="text-2xl" />,
-    },
-    {
-      title: "PUC",
-      date: "2019 - 2021",
-      description:
-        "Completed PUC at MES Kishora Kendra with 73%, specializing in PCMC (Physics, Chemistry, Mathematics, and Computer Science).",
-      icon: <FaGraduationCap className="text-2xl" />,
-    },
-    {
-      title: "SSLC",
-      date: "2018 - 2019",
-      description:
-        "Completed SSLC at MES Kishora Kendra with 76%, building a solid academic foundation.",
-      icon: <FaGraduationCap className="text-2xl" />,
-    },
-  ];
-
-  const certificationData = [
-    {
-      title: "Super Learner",
-      date: "October 2025",
-      description:
-        "Completed Super Learner certification from McKinsey, enhancing learning strategies, memory techniques, and productivity skills.",
-      icon: <FaCertificate className="text-2xl" />,
-    },
-    {
-      title: "Master Full Stack Development",
-      date: "September 2025 - October 2025",
-      description:
-        "Completed Master Full Stack Development course on Udemy, mastering comprehensive web development skills.",
-      icon: <FaCertificate className="text-2xl" />,
-    },
-    {
-      title: "Node.js - Beginner to Advance",
-      date: "August 2025 - September 2025",
-      description:
-        "Completed Node.js course on Udemy, gaining advanced knowledge in server-side JavaScript, APIs, and Express.js.",
-      icon: <FaCertificate className="text-2xl" />,
-    },
-    {
-      title: "Certified Ethical Hacker (CEH)",
-      date: "April 2024 - June 2024",
-      description:
-        "Completed CEH from EC COUNCIL, acquiring hands-on experience in cybersecurity, network security, and vulnerability assessment.",
-      icon: <FaCertificate className="text-2xl" />,
-    },
-    {
-      title: "Hackathon - Cognavi India Pvt Ltd",
-      date: "January 2024",
-      description:
-        "Participated in hackathon at Indian Institute of Science. Developed Coalesce, a platform bridging the gap between educational institutions and industry demands.",
-      icon: <FaCertificate className="text-2xl" />,
-    },
-    {
-      title: "Java Full Stack Development",
-      date: "Jun 2023 - Jan 2024",
-      description:
-        "Completed at Besant Technologies, gaining expertise in HTML, CSS, JavaScript, React.js, Core & Advanced Java, and MySQL.",
-      icon: <FaCertificate className="text-2xl" />,
-    },
-  ];
-
   const displayData =
     activeTab === "education" ? educationData : certificationData;
 
   return (
     <div
       id="education"
-      className="min-h-screen bg-gray-300 py-16 px-4 flex items-center"
+      className="min-h-screen py-16 px-4 flex items-center"
+      style={{ background: "var(--bg-base)" }}
     >
       <div className="max-w-7xl mx-auto w-full">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -92,75 +131,157 @@ const EducationTimeline = () => {
           className="text-center mb-8"
         >
           <div className="inline-block relative pb-4">
-            {" "}
-            {/* Added padding-bottom to make room for line */}
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
-              <span className="bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
-                🎓 EDUCATION & CERTIFICATIONS 📜{" "}
-              </span>
+            <h1
+              className="text-4xl sm:text-5xl font-bold mb-2"
+              style={{ color: "var(--ink-accent)" }}
+            >
+              🎓 EDUCATION & CERTIFICATIONS 📜
             </h1>
-            {/* Moved the line slightly closer to text, not over the buttons */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-green-600 to-transparent rounded-full" />
+            <div
+              className="absolute bottom-0 left-0 right-0 h-1 rounded-full"
+              style={{ background: "var(--ink-accent-mid)" }}
+            />
           </div>
 
-          {/* Buttons stay below the line */}
           <div className="flex justify-center gap-4 mt-6">
-            <button
-              onClick={() => setActiveTab("education")}
-              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeTab === "education"
-                  ? "bg-green-900 text-white shadow-lg scale-105"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border-2 border-gray-400"
-              }`}
-            >
-              <FaGraduationCap className="inline mr-2" />
-              Education
-            </button>
-            <button
-              onClick={() => setActiveTab("certification")}
-              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeTab === "certification"
-                  ? "bg-green-900 text-white shadow-lg scale-105"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border-2 border-gray-400"
-              }`}
-            >
-              <FaCertificate className="inline mr-2" />
-              Certifications
-            </button>
+            {["education", "certification"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className="px-8 py-3 rounded-full font-semibold transition-all duration-300 capitalize flex items-center gap-2"
+                style={
+                  activeTab === tab
+                    ? {
+                        background: "var(--ink-accent)",
+                        color: "#fff",
+                        transform: "scale(1.05)",
+                      }
+                    : {
+                        background: "var(--bg-surface)",
+                        color: "var(--ink-primary)",
+                        border: "1px solid oklch(80% 0.01 240)",
+                      }
+                }
+              >
+                {tab === "education" ? <FaGraduationCap /> : <FaCertificate />}
+                {tab === "education" ? "Education" : "Certifications"}
+              </button>
+            ))}
           </div>
         </motion.div>
 
+        {/* Cards */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {displayData.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-2xl p-6 border-2 border-gray-400 hover:border-green-600 shadow-xl hover:shadow-2xl transition-all duration-300"
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                whileHover={{
+                  y: -10,
+                  rotate: 0.5,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
+                }}
+                className="rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 group"
+                style={{
+                  background: "var(--bg-surface)",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                }}
               >
-                <div className="inline-block p-4 rounded-xl mb-4 bg-green-100">
-                  <div className="text-green-700">{item.icon}</div>
-                </div>
+                {/* Colored top border */}
+                <div
+                  className="h-1.5 w-full"
+                  style={{ background: item.accent }}
+                />
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm font-semibold mb-3 text-green-700">
-                  {item.date}
-                </p>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <div className="p-6 pt-8 relative">
+                  {/* Floating icon */}
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:rotate-12"
+                    style={{
+                      background: `${item.accent}18`,
+                      border: `1.5px solid ${item.accent}40`,
+                    }}
+                  >
+                    <span style={{ color: item.accent, fontSize: "1.5rem" }}>
+                      {activeTab === "education" ? (
+                        <FaGraduationCap />
+                      ) : (
+                        <FaCertificate />
+                      )}
+                    </span>
+                  </div>
+
+                  {/* Title & institution */}
+                  <h3
+                    className="text-lg font-bold mb-0.5 leading-tight"
+                    style={{ color: "var(--ink-primary)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="text-sm font-medium mb-3"
+                    style={{ color: "var(--ink-secondary)" }}
+                  >
+                    {item.institution}
+                  </p>
+
+                  {/* Date pill */}
+                  <div
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-4 text-xs font-semibold"
+                    style={{
+                      background: `${item.accent}15`,
+                      color: item.accent,
+                      border: `1px solid ${item.accent}30`,
+                    }}
+                  >
+                    <FaCalendarAlt className="text-[10px]" />
+                    {item.date}
+                  </div>
+
+                  {/* Bullet points */}
+                  <ul className="space-y-1.5 mb-4">
+                    {item.bullets.map((b, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm"
+                        style={{ color: "var(--ink-secondary)" }}
+                      >
+                        <span
+                          className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                          style={{ background: item.accent }}
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Chips */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.chips.map((chip, i) => (
+                      <span
+                        key={i}
+                        className="px-2.5 py-0.5 text-xs font-medium rounded-full"
+                        style={{
+                          background: `${item.accent}15`,
+                          color: item.accent,
+                          border: `1px solid ${item.accent}30`,
+                        }}
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
